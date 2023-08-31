@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { getMonth } from "../../helpers/Date";
+import { getMonth } from "../../helpers/Date/index";
 
 import "./style.scss";
 
