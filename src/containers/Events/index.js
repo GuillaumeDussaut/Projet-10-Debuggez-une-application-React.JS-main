@@ -16,7 +16,7 @@ const EventList = () => {
   const filteredEvents = (
     (!type
       ? data?.events
-      : data?.events.filter((event) => event.type === type)) || []
+      : data?.events.filter((event) => event.type === type)) || [] // arrangement pour le système de tri
   ).filter((event, index) => {
     if (
       (currentPage - 1) * PER_PAGE <= index &&
@@ -51,6 +51,7 @@ const EventList = () => {
                 {({ setIsOpened }) => (
                   <EventCard
                     onClick={() => setIsOpened(true)}
+                    key={event.id}
                     imageSrc={event.cover}
                     title={event.title}
                     date={new Date(event.date)}
@@ -73,5 +74,4 @@ const EventList = () => {
     </>
   );
 };
-
 export default EventList;
